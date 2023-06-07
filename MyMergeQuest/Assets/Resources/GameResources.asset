@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136f574e0a2af4c49abf0c7385c0d369, type: 3}
   m_Name: GameResources
   m_EditorClassIdentifier: 
-  items:
+  weapon:
+  - {fileID: 1684171143, guid: f69001b999442f94082b5fa5152d759c, type: 3}
   - {fileID: 57627402, guid: f69001b999442f94082b5fa5152d759c, type: 3}
   - {fileID: 115544554, guid: f69001b999442f94082b5fa5152d759c, type: 3}
   - {fileID: 1175738788, guid: f69001b999442f94082b5fa5152d759c, type: 3}
@@ -23,3 +24,39 @@ MonoBehaviour:
   - {fileID: 67419227, guid: f69001b999442f94082b5fa5152d759c, type: 3}
   - {fileID: -473006914, guid: f69001b999442f94082b5fa5152d759c, type: 3}
   - {fileID: 2050436597, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1611429073, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 681040323, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1905957527, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 31898515, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  armor:
+  - {fileID: -1710391893, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -941911995, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -852026593, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -585192564, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -2119474057, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -915533270, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -152387191, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1319423453, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1948336062, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1670349220, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 778003462, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -411517942, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1366398696, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1513064209, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 618043731, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  healing:
+  - {fileID: -1872776657, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1366780434, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1774044985, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -675227778, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1251584341, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1937397083, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 850001206, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1572091315, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -269229131, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -1209734845, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: -760776999, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1643451089, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1281150194, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1026208927, guid: f69001b999442f94082b5fa5152d759c, type: 3}
+  - {fileID: 1171535471, guid: f69001b999442f94082b5fa5152d759c, type: 3}

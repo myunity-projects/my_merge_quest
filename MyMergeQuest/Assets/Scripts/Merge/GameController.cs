@@ -50,11 +50,6 @@ public class GameController : MonoBehaviour
             //Drop item
             SendRayCast();
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PlaceRandomItem();
-        }
     }
 
     void SendRayCast()
@@ -73,14 +68,14 @@ public class GameController : MonoBehaviour
                 itemGO.transform.localScale = Vector3.one * 2;
 
                 carryingItem = itemGO.GetComponent<ItemInfo>();
-                carryingItem.InitDummy(slot.id, slot.currentItem.id);
+                carryingItem.InitDummy(slot.id, slot.currentItem.id, slot.spriteType);
 
                 slot.ItemGrabbed();
             }
             //we are dropping an item to empty slot
             else if (slot.state == SlotState.Empty && carryingItem != null)
             {
-                slot.CreateItem(carryingItem.itemId);
+                slot.CreateItem(carryingItem.itemId, carryingItem.spriteType);
                 Destroy(carryingItem.gameObject);
             }
 
@@ -125,7 +120,7 @@ public class GameController : MonoBehaviour
         var slot = GetSlotById(targetSlotId);
         Destroy(slot.currentItem.gameObject);
         
-        slot.CreateItem(carryingItem.itemId + 1);
+        slot.CreateItem(carryingItem.itemId + 1, carryingItem.spriteType);
 
         Destroy(carryingItem.gameObject);
     }
@@ -133,11 +128,11 @@ public class GameController : MonoBehaviour
     void OnItemCarryFail()
     {
         var slot = GetSlotById(carryingItem.slotId);
-        slot.CreateItem(carryingItem.itemId);
+        slot.CreateItem(carryingItem.itemId, carryingItem.spriteType);
         Destroy(carryingItem.gameObject);
     }
 
-    void PlaceRandomItem()
+    public void PlaceRandomItem(string spriteType)
     {
         if (AllSlotsOccupied())
         {
@@ -154,7 +149,7 @@ public class GameController : MonoBehaviour
             slot = GetSlotById(rand);
         }
 
-        slot.CreateItem(0);
+        slot.CreateItem(0, spriteType);
     }
 
     bool AllSlotsOccupied()

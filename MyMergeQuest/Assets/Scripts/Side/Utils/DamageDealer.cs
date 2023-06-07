@@ -19,4 +19,9 @@ public class DamageDealer : MonoBehaviour
             }            
         }
     }
+
+    public float GetDamage()
+    {
+        return damage;
+    }
 }

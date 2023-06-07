@@ -11,8 +11,18 @@ public static class Utils
         return gameResources = Resources.Load<GameResources>("GameResources");
     }
 
-    public static Sprite GetItemVisualById(int itemId)
+    public static Sprite GetWeaponsVisualById(int itemId)
     {
-        return gameResources.items[itemId];
+        return gameResources.weapon[itemId];
+    }
+
+    public static Sprite GetArmorVisualById(int itemId)
+    {
+        return gameResources.armor[itemId];
+    }
+
+    public static Sprite GetHealingVisualById(int itemId)
+    {
+        return gameResources.healing[itemId];
     }
 }
