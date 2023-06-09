@@ -33,7 +33,7 @@ public class ItemMergeHandler : MonoBehaviour
         }
 
         // If total amount of hitpoints divisible by 3 then health increases by a number in range from 1 to 3
-        if (GlobalVars.itemsMerged && (totalPlayerHitPoints / 3 == 0))
+        if (GlobalVars.itemsMerged && (totalPlayerHitPoints / 3 == 0) && playerHealth.currentHealth <= 100)
         {
             playerHealth.currentHealth += Random.Range(1, 3);
         }        

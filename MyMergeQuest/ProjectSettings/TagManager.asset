@@ -8,6 +8,8 @@ TagManager:
   - WeaponsButton
   - ArmorButton
   - HealingButton
+  - PlayerFill
+  - EnemyFill
   layers:
   - Default
   - TransparentFX

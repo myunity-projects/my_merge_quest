@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     private EnemyAnimationManager enemyAnimationManager;
     private PlayerAnimations playerAnimations;
+    private HealthBar healthBar;
 
     public float currentHealth;
 
@@ -17,12 +18,14 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         isAlive = true;
+        healthBar = GetComponent<HealthBar>();
+        healthBar.SetMaxHealth(maxHealth);
 
         if (gameObject.CompareTag("Player"))
         {
-            playerAnimations = GetComponent<PlayerAnimations>();
+            playerAnimations = GetComponent<PlayerAnimations>();          
         }
-        else
+        else if (gameObject.CompareTag("Enemy") && GlobalVars.enemySpawned)
         {
             enemyAnimationManager = GetComponent<EnemyAnimationManager>();
         }
@@ -35,7 +38,7 @@ public class Health : MonoBehaviour
 
     public void RecieveDamage(float damage)
     {
-        if (isAlive)
+        if (isAlive && gameObject != null)
         {
             if(gameObject.CompareTag("Player"))
             {
@@ -46,6 +49,7 @@ public class Health : MonoBehaviour
                 enemyAnimationManager.EnemyHurtAnimation();
             }
             currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
         }        
     }
 

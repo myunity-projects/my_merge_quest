@@ -25,9 +25,12 @@ public class EnemyBehaviour : MonoBehaviour
 
         stopPoint = GameObject.Find(stopPointName).transform;
 
-        transform.DOMoveX(stopPoint.position.x, timeToStopPoint)
+        if(GlobalVars.enemySpawned)
+        {
+            transform.DOMoveX(stopPoint.position.x, timeToStopPoint)
             .SetEase(Ease.Linear)
             .OnComplete(() => GlobalVars.canMove = false);
+        }        
     }
 
     private void Update()

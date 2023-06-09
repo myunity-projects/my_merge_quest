@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 2820499513847034561}
   - component: {fileID: 1445878905}
   m_Layer: 0
-  m_Name: Enemy_Pig_Small
+  m_Name: Enemy_Pig_Small 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
