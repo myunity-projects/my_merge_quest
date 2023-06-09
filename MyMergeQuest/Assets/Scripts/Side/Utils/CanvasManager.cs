@@ -30,6 +30,6 @@ public class CanvasManager : MonoBehaviour
     private void Update()
     {
         playerHealthPointsText.text = $"Player HP: {playerHealth.currentHealth}";
-        playerHitPointsText.text = $"Player HitP: {playerHitPoints.GetDamage()}";      
+        playerHitPointsText.text = $"Player HitP: {playerHitPoints.damage}";      
     }
 }

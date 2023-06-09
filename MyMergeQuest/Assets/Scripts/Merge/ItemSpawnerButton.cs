@@ -7,10 +7,6 @@ public class ItemSpawnerButton : MonoBehaviour
 {
     GameController controller;
 
-    string weaponSpriteType = "weapon";
-    string armorSpriteType = "armor";
-    string healingSpriteType = "healing";
-
     private void Start()
     {
         controller = FindObjectOfType<GameController>();
@@ -18,16 +14,6 @@ public class ItemSpawnerButton : MonoBehaviour
 
     public void SpawnWeapon()
     {
-        controller.PlaceRandomItem(weaponSpriteType);
-    }
-
-    public void SpawnArmor()
-    {
-        controller.PlaceRandomItem(armorSpriteType);
-    }
-
-    public void SpawnHealing()
-    {
-        controller.PlaceRandomItem(healingSpriteType);
+        controller.PlaceRandomItem();
     }
 }

@@ -68,14 +68,14 @@ public class GameController : MonoBehaviour
                 itemGO.transform.localScale = Vector3.one * 2;
 
                 carryingItem = itemGO.GetComponent<ItemInfo>();
-                carryingItem.InitDummy(slot.id, slot.currentItem.id, slot.spriteType);
+                carryingItem.InitDummy(slot.id, slot.currentItem.id);
 
                 slot.ItemGrabbed();
             }
             //we are dropping an item to empty slot
             else if (slot.state == SlotState.Empty && carryingItem != null)
             {
-                slot.CreateItem(carryingItem.itemId, carryingItem.spriteType);
+                slot.CreateItem(carryingItem.itemId);
                 Destroy(carryingItem.gameObject);
             }
 
@@ -120,7 +120,10 @@ public class GameController : MonoBehaviour
         var slot = GetSlotById(targetSlotId);
         Destroy(slot.currentItem.gameObject);
         
-        slot.CreateItem(carryingItem.itemId + 1, carryingItem.spriteType);
+        slot.CreateItem(carryingItem.itemId + 1);
+
+        GlobalVars.itemsMerged = true;
+        GlobalVars.mergedItemId = carryingItem.itemId + 1;
 
         Destroy(carryingItem.gameObject);
     }
@@ -128,11 +131,11 @@ public class GameController : MonoBehaviour
     void OnItemCarryFail()
     {
         var slot = GetSlotById(carryingItem.slotId);
-        slot.CreateItem(carryingItem.itemId, carryingItem.spriteType);
+        slot.CreateItem(carryingItem.itemId);
         Destroy(carryingItem.gameObject);
     }
 
-    public void PlaceRandomItem(string spriteType)
+    public void PlaceRandomItem()
     {
         if (AllSlotsOccupied())
         {
@@ -149,7 +152,7 @@ public class GameController : MonoBehaviour
             slot = GetSlotById(rand);
         }
 
-        slot.CreateItem(0, spriteType);
+        slot.CreateItem(0);
     }
 
     bool AllSlotsOccupied()

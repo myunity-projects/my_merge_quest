@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     public string spriteType;
     public SlotState state = SlotState.Empty;
 
-    public void CreateItem(int id, string spriteType) 
+    public void CreateItem(int id) 
     {
         var itemGO = (GameObject)Instantiate(Resources.Load("Prefabs/Item"));
         
@@ -18,7 +18,7 @@ public class Slot : MonoBehaviour
         itemGO.transform.localScale = Vector3.one;
 
         currentItem = itemGO.GetComponent<Item>();
-        currentItem.Init(id, this, spriteType);
+        currentItem.Init(id, this);
 
         ChangeStateTo(SlotState.Full);
     }
@@ -34,18 +34,18 @@ public class Slot : MonoBehaviour
         ChangeStateTo(SlotState.Empty);
     }
 
-    private void ReceiveItem(int id, string spriteType)
+    private void ReceiveItem(int id)
     {
         switch (state)
         {
             case SlotState.Empty: 
 
-                CreateItem(id, spriteType);
+                CreateItem(id);
                 ChangeStateTo(SlotState.Full);
                 break;
 
             case SlotState.Full: 
-                if (currentItem.id == id && currentItem.spriteType == spriteType)
+                if (currentItem.id == id)
                 {
                     //Merged
                     Debug.Log("Merged");
