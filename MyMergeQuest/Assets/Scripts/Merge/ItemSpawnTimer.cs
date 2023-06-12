@@ -26,7 +26,6 @@ public class ItemSpawnTimer : MonoBehaviour
     {
         if (spawnTimerValue < timeToRefillButton) 
         {
-            spawnButton.interactable = false;
             spawnTimerValue += Time.deltaTime;
             spawnButton.image.fillAmount = spawnTimerValue / timeToRefillButton;
         } 
@@ -42,6 +41,6 @@ public class ItemSpawnTimer : MonoBehaviour
     {
         spawnTimerValue = 0;
         spawnButton.image.fillAmount = 0;
-        
+        spawnButton.interactable = false;
     }
 }
