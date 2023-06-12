@@ -43,6 +43,11 @@ public class PlayerAnimations : MonoBehaviour
         ChangeAnimationState(HurtAnim);
     }
 
+    public void PlayerDeathAnimation()
+    {
+        StartCoroutine(DeathAnimation());
+    }
+
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
@@ -72,6 +77,16 @@ public class PlayerAnimations : MonoBehaviour
             yield return new WaitForSeconds(GetAnimationLength(Attack1Anim));
 
             isAttacking = false;
+        }
+    }
+
+    IEnumerator DeathAnimation()
+    {
+        while (!GlobalVars.canMove)
+        {
+            isAttacking = true;
+            ChangeAnimationState(DeathAnim);
+            yield return new WaitForSeconds(GetAnimationLength(DeathAnim));
         }
     }
 }

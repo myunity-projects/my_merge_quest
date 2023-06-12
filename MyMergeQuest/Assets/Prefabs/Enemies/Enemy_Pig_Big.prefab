@@ -522,7 +522,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.4235511, y: -0.45553637}
+  m_Offset: {x: -1.4235511, y: -0.53967315}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -533,7 +533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7465734, y: 1.2783833}
+  m_Size: {x: 1.7465734, y: 1.9019858}
   m_EdgeRadius: 0
 --- !u!114 &8909278822656316013
 MonoBehaviour:
@@ -550,7 +550,7 @@ MonoBehaviour:
   tags:
   - Player
   - Enemy
-  damage: 1
+  damage: 2
 --- !u!1 &4236732238399333761
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 2820499513847034561}
   - component: {fileID: 1445878905}
   m_Layer: 0
-  m_Name: Enemy_Pig_Small
+  m_Name: Enemy_Pig_Big
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +800,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1522164549, guid: 03b4e3d3e1277494c9dafbf0dc09b435, type: 3}
+  m_Sprite: {fileID: 1084509491, guid: 447ebf2af09e0d34c949bffb6dacd46c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -821,7 +821,7 @@ Animator:
   m_GameObject: {fileID: 6456343395075573938}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c178c5cba1d0ec4aa01d539c1357817, type: 2}
+  m_Controller: {fileID: 9100000, guid: 54a452344e257e54d97d9d3665fe9316, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c6b1f6442c6ba4abda0b83eb474c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 6
   currentHealth: 3
   isAlive: 0
 --- !u!50 &4690209062703057089
@@ -894,18 +894,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.36454844}
+  m_Offset: {x: -0.00000047683716, y: -0.6070605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 2}
+    oldSize: {x: 4, y: 3}
     newSize: {x: 4, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.84058, y: 1.2709031}
+  m_Size: {x: 0.97915745, y: 1.7559272}
   m_EdgeRadius: 0
 --- !u!114 &2820499513847034561
 MonoBehaviour:

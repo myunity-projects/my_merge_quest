@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     private EnemyAnimationManager enemyAnimationManager;
     private PlayerAnimations playerAnimations;
     private HealthBar healthBar;
+    private LevelLoader levelLoader;
 
     public float currentHealth;
 
@@ -50,7 +51,12 @@ public class Health : MonoBehaviour
             }
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
-        }        
+        }
+        else if (!isAlive && gameObject.CompareTag("Player"))
+        {
+            playerAnimations.PlayerDeathAnimation();
+            levelLoader.LoadLevel(3);
+        }
     }
 
     private void CheckIsAlive()

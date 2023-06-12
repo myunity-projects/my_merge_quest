@@ -7,13 +7,14 @@ public class ItemSpawnTimer : MonoBehaviour
 {
     [SerializeField] private Button spawnButton;
 
-    [SerializeField] private float timeToRefillButton = 3f;
+    private float timeToRefillButton = 3f;
 
     private float spawnTimerValue;
 
     private void Start()
     {
         spawnTimerValue = timeToRefillButton;
+        spawnButton.interactable = true;
     }
 
     void Update()
@@ -24,7 +25,8 @@ public class ItemSpawnTimer : MonoBehaviour
     void UpdateTimer() 
     {
         if (spawnTimerValue < timeToRefillButton) 
-        { 
+        {
+            spawnButton.interactable = false;
             spawnTimerValue += Time.deltaTime;
             spawnButton.image.fillAmount = spawnTimerValue / timeToRefillButton;
         } 
@@ -40,6 +42,6 @@ public class ItemSpawnTimer : MonoBehaviour
     {
         spawnTimerValue = 0;
         spawnButton.image.fillAmount = 0;
-        spawnButton.interactable = false;
+        
     }
 }

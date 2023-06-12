@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     private Health enemyHealth;
+
+    private int randomEnemyIndex;
     
     private float spawnDelay = 3f;
     private float currentTime = 0f;
 
     private void Start()
     {
-        enemyHealth = enemyPrefab.GetComponent<Health>();
-        Debug.Log(enemyHealth.currentHealth.ToString());
+        enemyHealth = enemyPrefabs[randomEnemyIndex].GetComponent<Health>();   
     }
 
     private void Update()
@@ -32,7 +33,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
         // Instantiate the enemy prefab at the spawner's position
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        Instantiate(enemyPrefabs[randomEnemyIndex], transform.position, Quaternion.identity);
     }
 }

@@ -7,24 +7,45 @@ public class EnemyAnimationManager : MonoBehaviour
 {
     const string AttackAnimName = "Attack";
     const string HurtAnimName = "Hurt";
-    const string AttackAnimBoolName = "isAttacking";
-    const string HurtAnimBoolName = "isHurt";
+    const string IdleAnimationName = "Idle";
 
-    private bool isAttacking = false;
+    private bool isAttacking;
 
     public float attackAnimLength;
     public float hurtAnimLength;
 
-    Animator animator;
+    private string currentAnimaton;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+    Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        isAttacking = false;
         SetAnimationLengths();
+    }
+
+    void Update()
+    {
+        if (!GlobalVars.canMove)
+        {
+            if (!isAttacking && currentAnimaton != AttackAnimName)
+            {
+                StartCoroutine(AttackAnimation());
+            }
+        }
+        else
+        {
+            ChangeAnimationState(IdleAnimationName);
+        }
+    }
+
+    void ChangeAnimationState(string newAnimation)
+    {
+        if (currentAnimaton == newAnimation) return;
+
+        animator.Play(newAnimation);
+        currentAnimaton = newAnimation;
     }
 
     private void SetAnimationLengths()
@@ -43,7 +64,7 @@ public class EnemyAnimationManager : MonoBehaviour
 
     public void EnemyHurtAnimation()
     {
-        StartCoroutine(HurtAnimation());
+        ChangeAnimationState(HurtAnimName);
     }
     
     private float GetAnimationLength(string animName)
@@ -60,20 +81,13 @@ public class EnemyAnimationManager : MonoBehaviour
         {
             isAttacking = true;
 
-            yield return new WaitForSeconds(0.5f);      
-            animator.SetBool(AttackAnimBoolName, true);
+            yield return new WaitForSeconds(0.5f);
+            ChangeAnimationState(AttackAnimName);
 
             yield return new WaitForSeconds(attackAnimLength);
-            animator.SetBool(AttackAnimBoolName, false);
+            ChangeAnimationState(IdleAnimationName);
 
             isAttacking = false;
         }
-    }
-
-    IEnumerator HurtAnimation()
-    {
-        animator.SetBool(HurtAnimBoolName, true);
-        yield return new WaitForSeconds(hurtAnimLength);
-        animator.SetBool(HurtAnimBoolName, false);
     }
 }
